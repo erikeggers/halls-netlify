@@ -30,7 +30,7 @@ const Layout = ({ children }) => {
       <div
         style={{
           margin: `0 auto`,
-          maxWidth: 1440,
+          // maxWidth: 1440,
           display: `flex`,
           flexDirection: `column`,
           minHeight: `100vh`,

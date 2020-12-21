@@ -1,3 +1,11 @@
+const myCustomQueries = {
+  xs: "(max-width: 320px)",
+  sm: "(max-width: 720px)",
+  md: "(max-width: 1224px)",
+  l: "(max-width: 1440px)",
+  portrait: "(orientation: portrait)",
+}
+
 module.exports = {
   siteMetadata: {
     title: `Halls Tree Services`,
@@ -56,6 +64,12 @@ module.exports = {
       options: {
         name: `team`,
         path: `${__dirname}/src/services`,
+      },
+    },
+    {
+      resolve: "gatsby-plugin-breakpoints",
+      options: {
+        queries: myCustomQueries,
       },
     },
     `gatsby-plugin-netlify-cms`,

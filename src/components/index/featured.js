@@ -4,7 +4,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 
 const Container = styled.div`
-  margin: 0 40px;
+  max-width: 1440px;
 `
 
 const Row = styled.div`
@@ -58,7 +58,7 @@ const Featured = () => {
   `)
 
   return (
-    <Container>
+    <Container className="container">
       <Row>
         <ImageContainer>
           <Img fluid={data.partner.childImageSharp.fluid} />
