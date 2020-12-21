@@ -1,6 +1,6 @@
 const myCustomQueries = {
   xs: "(max-width: 320px)",
-  sm: "(max-width: 720px)",
+  sm: "(max-width: 860px)",
   md: "(max-width: 1224px)",
   l: "(max-width: 1440px)",
   portrait: "(orientation: portrait)",
@@ -19,6 +19,13 @@ module.exports = {
       options: {
         name: `images`,
         path: `${__dirname}/src/images`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `assests`,
+        path: `${__dirname}/src/assets`,
       },
     },
     `gatsby-transformer-sharp`,

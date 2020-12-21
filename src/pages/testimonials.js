@@ -15,7 +15,7 @@ const Testimonials = () => (
     </Helmet>
     <Hero image={"testimonials"} text="Testimonials" />
     <div>
-      <div className="elfsight-app-183e61d6-4804-480e-8f42-ac8da9ca0863"></div>
+      <div className="elfsight-app-4b64ebdd-a3a6-49f2-864a-90edd93bb06e"></div>
     </div>
   </Layout>
 )

@@ -5,9 +5,9 @@ import Img from "gatsby-image"
 const Logo = () => {
   const data = useStaticQuery(graphql`
     query {
-      logo: file(relativePath: { eq: "logo.png" }) {
+      logo: file(relativePath: { eq: "logo.svg" }) {
         childImageSharp {
-          fixed(width: 200, height: 44, quality: 100) {
+          fixed(width: 200, quality: 100) {
             ...GatsbyImageSharpFixed_noBase64
           }
         }
