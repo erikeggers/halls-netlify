@@ -32,7 +32,7 @@ const CardText = styled.p`
   color: #424440;
 `
 const ServicesItem = props => (
-  <div className="col-sm-6 col-lg-4">
+  <div className="col-sm-6 col-lg-4 mb-4">
     <ImageContainer>
       <ServiceImage fluid={props.image} style={{ borderRadius: "8px" }} />
     </ImageContainer>

@@ -1,0 +1,25 @@
+backend:
+  name: github
+  branch: master
+  repo: erikeggers/halls-netlify
+
+media_folder: src/images
+public_folder: ../images
+
+collections:
+  - name: "team"
+    label: "Team Member"
+    folder: "src/team"
+    create: true
+    fields:
+      - { label: "Team Member", name: "title", widget: "string" }
+      - { label: "About", name: "about", widget: "string" }
+      - { label: "Image", name: "featuredImage", widget: "image" }
+  - name: "services"
+    label: "Services"
+    folder: "src/services"
+    create: true
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "desc", widget: "string" }
+      - { label: "Image", name: "image", widget: "image" }

@@ -5,7 +5,6 @@ import ServicesItem from "./services_item"
 
 const Container = styled.div`
   width: 100%;
-  padding: 60px 0;
 `
 
 const ServicesContainer = () => {
