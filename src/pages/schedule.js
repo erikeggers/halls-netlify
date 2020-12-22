@@ -1,19 +1,23 @@
 import React from "react"
 import Layout from "../components/layout"
-import { InlineWidget, PopupWidget } from "react-calendly"
+import { InlineWidget } from "react-calendly"
+import Hero from "../components/hero"
 
 const Schedule = () => (
   <Layout>
-    <div>
-      <h1>Schedule Service</h1>
-      <p>This is Schedule Service</p>
-      <InlineWidget url="https://calendly.com/em-eggers/service" />
-
-      <PopupWidget
-        color="#8CBD45"
-        text="Schedule Service"
-        textColor="#ffffff"
-        url="https://calendly.com/em-eggers/service"
+    <Hero image="services" text="Schedule Service" />
+    <div style={{ marginTop: "-56px" }}>
+      <InlineWidget
+        pageSettings={{
+          backgroundColor: "F5F1E0",
+          hideEventTypeDetails: false,
+          hideLandingPageDetails: false,
+          primaryColor: "8CBD45",
+          textColor: "4d5055",
+          height: "1200px",
+        }}
+        url="https://calendly.com/royhallstreeservice/service"
+        styles={{ height: "900px" }}
       />
     </div>
   </Layout>

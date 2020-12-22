@@ -63,6 +63,7 @@ section {
 }
 
 body {
+  overflow-y: scroll !important;
   margin: 0;
   font-family: "Open Sans";
   font-size: 1rem;

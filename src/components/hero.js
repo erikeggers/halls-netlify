@@ -4,18 +4,19 @@ import BackgroundImage from "gatsby-background-image"
 import { useStaticQuery, graphql } from "gatsby"
 
 const Container = styled(BackgroundImage)`
+  z-index: 1;
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
   height: 300px;
   max-width: 100%;
-  opacity: 1 !important;
-  background: linear-gradient(
+  /* opacity: 1 !important; */
+  /* background: linear-gradient(
     to bottom,
     rgba(0, 0, 0, 0.73),
     rgba(255, 0, 0, 0)
-  );
+  ); */
   background-size: cover;
   background-position: 50% 50%;
   margin-bottom: 56px;
@@ -75,8 +76,22 @@ const Hero = props => {
       ? data.services.childImageSharp.fluid
       : null
 
+  const backgroundFluidImage = [
+    imageData,
+    // `linear-gradient(rgba(220, 15, 15, 0.73), rgba(4, 243, 67, 0.73))`,
+    `linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.73),
+      rgba(255, 0, 0, 0)
+    )`,
+  ].reverse()
   return (
-    <Container Tag="section" className="hero-image" fluid={imageData}>
+    <Container
+      isDarken={"30%"}
+      Tag="section"
+      className="hero-image"
+      fluid={backgroundFluidImage}
+    >
       <HeroH2>{props.text}</HeroH2>
     </Container>
   )
