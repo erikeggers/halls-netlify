@@ -2,6 +2,7 @@ import React from "react"
 import styled from "styled-components"
 
 const Container = styled.div`
+  overflow: hidden;
   background-color: #faf7ee;
   width: 100%;
   display: flex;

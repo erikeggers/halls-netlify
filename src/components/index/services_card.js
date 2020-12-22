@@ -4,14 +4,13 @@ import BackgroundImage from "gatsby-background-image"
 import styled from "styled-components"
 
 const Container = styled.div`
-  margin: 0 1rem 1.62rem 1rem;
+  /* margin: 0 1rem 1.62rem 1rem; */
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  box-sizing: border-box;
   height: 200px;
-  width: 200px;
+  /* width: 200px; */
   border: 1px solid #f7f7f7;
   border-radius: 8px;
   background-color: #ffffff;
@@ -87,7 +86,7 @@ const ServicesCard = props => {
       : null
 
   return (
-    <Container>
+    <Container className="col-5 col-sm-5 col-m-4 col-lg-2 m-3">
       <ServiceIcon className="card-img-top" fluid={imageData} />
       <Label>{props.text}</Label>
     </Container>
