@@ -3,7 +3,6 @@ import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import styled, { css } from "styled-components"
 import Button from "./button"
-// import { PopupText } from "react-calendly"
 import { useBreakpoint } from "gatsby-plugin-breakpoints"
 
 import Logo from "../images/logo.svg"
@@ -91,7 +90,6 @@ const SubHeader = styled.div`
   background-color: #fff;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.14);
   padding: 4px 0;
-  /* position: relative; */
 `
 
 const SubHeaderText = styled.span`
@@ -142,38 +140,10 @@ const MobileLinkContainer = styled.div`
   }
 `
 
-// const ServiceButton = () => {
-//   return (
-//     <PopupText
-//       pageSettings={{
-//         backgroundColor: "F5F1E0",
-//         hideEventTypeDetails: false,
-//         hideLandingPageDetails: false,
-//         primaryColor: "8CBD45",
-//         textColor: "4d5055",
-//       }}
-//       styles={{
-//         backgroundColor: "#8CBD45",
-//         borderRadius: "20px",
-//         boxShadow: "0 4px 8px 0 rgba(35, 35, 35, 0.14)",
-//         padding: "12px 18px",
-//         fontFamily: "Montserrat",
-//         fontSize: "14px",
-//         fontWeight: "bold",
-//         letterSpacing: "0",
-//         color: "#ffffff",
-//         lineHeight: "normal",
-//       }}
-//       text="Schedule Service"
-//       url="https://calendly.com/em-eggers/service"
-//     />
-//   )
-// }
 const Header = ({ siteTitle }) => {
   const breakpoints = useBreakpoint()
   const [navOpen, setNavOpen] = useState(false)
 
-  console.log(breakpoints)
   return (
     <HeaderWrapper
       navOpen={navOpen}
@@ -236,6 +206,7 @@ const Header = ({ siteTitle }) => {
                 onKeyDown={() => setNavOpen(!navOpen)}
                 role="button"
                 tabIndex={0}
+                style={{ outline: "none" }}
               >
                 <img
                   src={Menu}
