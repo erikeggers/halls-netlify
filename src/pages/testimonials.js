@@ -14,7 +14,7 @@ const Testimonials = () => (
       />
     </Helmet>
     <Hero image={"testimonials"} text="Testimonials" />
-    <div>
+    <div style={{ marginBottom: 64 }}>
       <div className="elfsight-app-4b64ebdd-a3a6-49f2-864a-90edd93bb06e"></div>
     </div>
   </Layout>
