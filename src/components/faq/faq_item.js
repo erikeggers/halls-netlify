@@ -14,6 +14,7 @@ const Row = styled.div`
   justify-content: space-between;
   padding: 30px 0;
   flex-wrap: nowrap;
+  cursor: pointer;
 `
 const Question = styled.h6`
   margin-bottom: 0;
@@ -58,9 +59,9 @@ const FaqItem = props => {
   `)
   return (
     <Container>
-      <Row className="row mr-1 ml-1">
+      <Row className="row mr-1 ml-1" onClick={handleClick}>
         <Question>{props.question}</Question>
-        <Icon onClick={handleClick}>
+        <Icon>
           {open ? (
             <Img fluid={data.up.childImageSharp.fluid} />
           ) : (
