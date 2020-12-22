@@ -1,6 +1,7 @@
 import React from "react"
 import styled from "styled-components"
-import { PopupText } from "react-calendly"
+import { Link } from "gatsby"
+import Button from "../../components/button"
 
 const Container = styled.div`
   width: 100%;
@@ -97,28 +98,15 @@ const ServicesCta = () => (
             </div>
           </ContactContainer>
 
-          <PopupText
-            pageSettings={{
-              backgroundColor: "F5F1E0",
-              hideEventTypeDetails: false,
-              hideLandingPageDetails: false,
-              primaryColor: "8CBD45",
-              textColor: "4d5055",
-            }}
-            styles={{
-              backgroundColor: "#8CBD45",
-              borderRadius: "20px",
-              boxShadow: "0 4px 8px 0 rgba(35, 35, 35, 0.14)",
-              padding: "12px 18px",
-              fontFamily: "Montserrat",
-              fontSize: "14px",
-              fontWeight: "bold",
-              letterSpacing: "0",
-              color: "#ffffff",
-            }}
-            text="Schedule Service"
-            url="https://calendly.com/em-eggers/service"
-          />
+          <Link to="/schedule">
+            {/* <NavButton margin> */}
+            <Button
+              text="Schedule Service"
+              color="#8CBD45"
+              padding="12px 18px"
+            />
+            {/* </NavButton> */}
+          </Link>
         </Right>
       </Row>
     </Container>
