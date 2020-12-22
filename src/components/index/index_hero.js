@@ -3,6 +3,7 @@ import styled from "styled-components"
 import BackgroundImage from "gatsby-background-image"
 import { useStaticQuery, graphql } from "gatsby"
 import { PopupText } from "react-calendly"
+import { useBreakpoint } from "gatsby-plugin-breakpoints"
 
 const Container = styled(BackgroundImage)`
   display: flex;
@@ -21,12 +22,13 @@ const HeroH2 = styled.h2`
   margin-bottom: 16px;
   font-weight: bold;
   letter-spacing: 0;
-  line-height: 48px;
-  font-size: 46px;
+  line-height: ${props =>
+    props.breakpoints.sm ? "24px" : props.breakpoints.md ? "32px" : "48px"};
+  font-size: ${props =>
+    props.breakpoints.sm ? "22px" : props.breakpoints.md ? "30px" : "46px"};
   color: #fff;
   font-family: Montserrat;
 `
-
 const HeroText = styled.p`
   margin-bottom: 40px;
   max-width: 555px;
@@ -49,6 +51,8 @@ const Hero = () => {
       }
     }
   `)
+  const breakpoints = useBreakpoint()
+  console.log(breakpoints)
 
   return (
     <Container
@@ -59,7 +63,7 @@ const Hero = () => {
       <div className="container">
         <div className="row">
           <div className="col-sm">
-            <HeroH2>
+            <HeroH2 breakpoints={breakpoints}>
               Over 40 years of professional land-conscious experience.
             </HeroH2>
             <HeroText>
