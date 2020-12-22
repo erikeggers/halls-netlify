@@ -36,7 +36,7 @@ const HeaderContainer = styled.div`
 const ItemContainer = styled.nav`
   margin: 0 auto;
   max-width: 1440px;
-  padding: 1.18rem 2.5rem;
+  padding: ${props => (props.breakpoint ? "1.18rem 1.5rem" : "1.18rem 2.5rem")};
   display: flex;
   justify-content: space-between;
 `
@@ -151,7 +151,7 @@ const Header = ({ siteTitle }) => {
       medium={breakpoints.md}
     >
       <HeaderContainer>
-        <ItemContainer>
+        <ItemContainer breakpoint={breakpoints.sm || breakpoints.md}>
           <Left>
             <LogoContainer breakpoint={breakpoints.sm}>
               <Link to="/">
@@ -218,16 +218,14 @@ const Header = ({ siteTitle }) => {
           </Right>
         </ItemContainer>
       </HeaderContainer>
+      {breakpoints.sm && (
+        <SubHeader>
+          <SubHeaderText>For a FREE qoute contact:</SubHeaderText>
+          <SubHeaderPhone href="tel:4788089338">(478) 808-9338</SubHeaderPhone>
+        </SubHeader>
+      )}
       {(breakpoints.sm || breakpoints.md) && navOpen && (
         <>
-          {breakpoints.sm && (
-            <SubHeader>
-              <SubHeaderText>For a free qoute contact:</SubHeaderText>
-              <SubHeaderPhone href="tel:4788089338">
-                (478) 808-9338
-              </SubHeaderPhone>
-            </SubHeader>
-          )}
           <MobileNav>
             {breakpoints.sm && (
               <Link to="/schedule">
