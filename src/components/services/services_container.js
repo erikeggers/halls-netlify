@@ -32,7 +32,7 @@ const ServicesContainer = () => {
 
   return (
     <Container className="container">
-      <div className="row mr-1 ml-1">
+      <div className="row">
         {data.allMarkdownRemark.edges.map((edge, i) => {
           return (
             <ServicesItem
