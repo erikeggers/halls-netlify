@@ -6,7 +6,7 @@ import BackgroundImage from "gatsby-background-image"
 const Container = styled.div`
   width: 100%;
   background: #faf7ee;
-  padding: 54px 0 20px 0;
+  padding: 54px 0 10px 0;
 `
 const Row = styled.div`
   justify-content: center;
@@ -43,7 +43,7 @@ const Title = styled.h6`
 const About = styled.p`
   color: #424440;
   max-width: 360px;
-  font-size: 13px;
+  font-size: 16px;
   letter-spacing: 0;
   line-height: 21px;
   text-align: center;
@@ -81,7 +81,7 @@ const TeamContainer = () => {
         <Row className="row">
           {data.allMarkdownRemark.edges.map((edge, i) => {
             return (
-              <TeamMember className="col-sm-12 col-lg-6" key={i++}>
+              <TeamMember className="col-sm-12 col-lg-6 mb-4" key={i++}>
                 <ImageContainer>
                   <TeamImage
                     fluid={

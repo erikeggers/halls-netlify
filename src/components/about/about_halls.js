@@ -3,6 +3,8 @@ import styled from "styled-components"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 
+import { useBreakpoint } from "gatsby-plugin-breakpoints"
+
 const Container = styled.div`
   /* margin: 0 40px; */
 `
@@ -10,17 +12,16 @@ const Container = styled.div`
 const Row = styled.div`
   display: flex;
   align-items: center;
-  justify-content: ${props => (props.flexEnd ? "flex-end" : null)};
-  margin-bottom: 64px;
+  margin-bottom: ${props => (props.breakpoint ? "24px" : "64px")};
 `
 const ImageContainer = styled.div`
-  max-width: 665px;
+  /* max-width: 665px; */
 `
 
 const TextContainer = styled.div`
   font-size: 15px;
-  padding: 30px;
-  max-width: 555px;
+  padding: 20px;
+  /* max-width: 555px; */
   .text {
     margin-top: 16px;
   }
@@ -48,17 +49,19 @@ const AboutHalls = () => {
     }
   `)
 
+  const breakpoints = useBreakpoint()
+
   return (
     <Container className="container">
-      <Row className="row">
-        <ImageContainer className="col-sm-12 col-lg-7">
+      <Row className="row" breakpoint={breakpoints.featured}>
+        <ImageContainer className="col-sm-12 col-md-6 col-lg-7">
           <Img
             fluid={data.aboutImage.childImageSharp.fluid}
             style={{ borderRadius: "8px" }}
           />
         </ImageContainer>
 
-        <TextContainer className="col-sm-12 col-lg-5">
+        <TextContainer className="col-sm-12 col-md-6 col-lg-5">
           <h3>About Halls Tree Services</h3>
           <div className="text">
             <p>
