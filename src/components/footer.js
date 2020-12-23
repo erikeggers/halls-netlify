@@ -1,8 +1,10 @@
 import React from "react"
-import styled from "styled-components"
+import styled, { css } from "styled-components"
 import { Link } from "gatsby"
 import BackgroundImage from "gatsby-background-image"
 import { useStaticQuery, graphql } from "gatsby"
+
+import { useBreakpoint } from "gatsby-plugin-breakpoints"
 
 const FooterContainer = styled.footer`
   background-color: #faf7ee;
@@ -14,18 +16,45 @@ const FooterText = styled.div`
   letter-spacing: 0;
   color: #7d5e40;
   font-weight: normal;
+  line-height: 1;
+  p {
+    font-family: "Open Sans";
+    font-size: 13px;
+  }
 `
 const Copyright = styled.div`
   text-align: center;
-  padding: 16px 0;
+  padding: 28px 0 18px 0;
   border-top: 1px solid #e3dccf;
   margin-top: 20px;
 `
 
 const LinkContainer = styled.div`
   display: flex;
-  justify-content: flex-end;
-  align-items: center;
+
+  ${props =>
+    props.breakpoint
+      ? css`
+          flex-direction: column;
+          align-items: center;
+          padding-top: 12px;
+          border-top: 1px solid #e3dccf;
+          .link-text {
+            padding: 12px 0;
+          }
+        `
+      : css`
+          justify-content: flex-end;
+          align-items: center;
+          .link-text:not(:last-of-type) {
+            margin-right: 40px;
+          }
+          .link-text:last-of-type {
+            margin-right: 20px;
+          }
+        `}
+  }
+
   .link-text {
     color: #7d5e40;
     font-size: 12px;
@@ -33,17 +62,22 @@ const LinkContainer = styled.div`
     letter-spacing: 0.6px;
     line-height: 16px;
     text-transform: uppercase;
-  }
-  .link-text:not(:last-of-type) {
-    margin-right: 40px;
-  }
-  .link-text:last-of-type {
-    margin-right: 20px;
+    white-space: nowrap;
   }
 `
 
 const ContactContainer = styled.div`
   display: flex;
+
+  ${props =>
+    props.breakpoint &&
+    css`
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      margin-bottom: 18px;
+    `}
+
   .contact-text {
     color: #7d5e40;
     font-size: 13px;
@@ -67,9 +101,10 @@ const PhoneContainer = styled.div`
 `
 const IconContainer = styled.div`
   display: flex;
-  justify-content: flex-end;
-  width: 72px;
-  border-left: 1px solid #e3dccf;
+  margin-top: ${props => (props.breakpoint ? "8px" : null)};
+  justify-content: ${props => (!props.breakpoint ? "flex-end" : null)};
+  width: 38px;
+  border-left: ${props => (!props.breakpoint ? "1px solid #e3dccf" : null)};
 `
 
 const PhoneIcon = styled(BackgroundImage)`
@@ -81,11 +116,6 @@ const FacebookIcon = styled(BackgroundImage)`
   width: 24px;
   height: 24px;
   margin-left: 8px;
-`
-
-const InstagramIcon = styled(BackgroundImage)`
-  width: 24px;
-  height: 24px;
 `
 
 const Footer = () => {
@@ -115,12 +145,14 @@ const Footer = () => {
     }
   `)
 
+  const breakpoints = useBreakpoint()
+
   return (
     <FooterContainer>
       <div className="container">
         <div className="row align-items-center">
-          <div className="col-sm">
-            <ContactContainer>
+          <div className="col-sm-12 col-md-6">
+            <ContactContainer breakpoint={breakpoints.featured}>
               <div>
                 <FooterText>For a FREE quote contact:</FooterText>
                 <PhoneContainer>
@@ -132,8 +164,8 @@ const Footer = () => {
               </div>
             </ContactContainer>
           </div>
-          <div className="col-sm">
-            <LinkContainer>
+          <div className="col-sm-12 col-md-6">
+            <LinkContainer breakpoint={breakpoints.featured}>
               <Link to="/services" className="link-text">
                 Services
               </Link>
@@ -146,8 +178,7 @@ const Footer = () => {
               <Link to="/testimonials" className="link-text">
                 Testimonials
               </Link>
-              <IconContainer>
-                <InstagramIcon fluid={data.instagram.childImageSharp.fluid} />
+              <IconContainer breakpoint={breakpoints.featured}>
                 <FacebookIcon fluid={data.facebook.childImageSharp.fluid} />
               </IconContainer>
             </LinkContainer>
@@ -155,8 +186,17 @@ const Footer = () => {
         </div>
         <Copyright>
           <FooterText>
-            Copyright {new Date().getFullYear()}. Halls Tree Service. All Rights
-            Reserved.
+            {!breakpoints.featured ? (
+              <p>
+                Copyright {new Date().getFullYear()}. Halls Tree Service. All
+                Rights Reserved.
+              </p>
+            ) : (
+              <>
+                <p>Copyright {new Date().getFullYear()}. Halls Tree Service.</p>
+                <p>All Rights Reserved.</p>
+              </>
+            )}
           </FooterText>
         </Copyright>
       </div>
