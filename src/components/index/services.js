@@ -57,8 +57,8 @@ const ServicesCardContainer = () => {
           className="row justify-content-center"
           style={{
             overflow: "hidden",
-            marginLeft: breakpoints.l && "-30px",
-            marginRight: breakpoints.l && "-30px",
+            marginLeft: breakpoints.l && "-15px",
+            marginRight: breakpoints.l && "-15px",
           }}
         >
           <ServicesCard image="treeRemoval" text="Tree Removal" />
