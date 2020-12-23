@@ -24,7 +24,7 @@ const ImageContainer = styled.div`
 
 const TextContainer = styled.div`
   font-size: 15px;
-  padding: 0 25px;
+  padding: 0 18px;
   max-width: ${props => (!props.featuredMobile ? "555px" : null)};
   .text {
     margin-top: 16px;
@@ -71,7 +71,7 @@ const Featured = () => {
       >
         <ImageContainer
           className={`col-12 col-md-6 col-lg-6 ${
-            breakpoints.featured && "p-4"
+            breakpoints.featured && "p-3"
           }`}
         >
           <Img fluid={data.partner.childImageSharp.fluid} />
@@ -104,7 +104,7 @@ const Featured = () => {
       </Row>
       {breakpoints.featured ? (
         <Row reverse={breakpoints.featured} className="row">
-          <ImageContainer className="col-12 col-md-6 col-lg-6 p-4">
+          <ImageContainer className="col-12 col-md-6 col-lg-6 p-3">
             <Img fluid={data.ethical.childImageSharp.fluid} />
           </ImageContainer>
           <TextContainer
