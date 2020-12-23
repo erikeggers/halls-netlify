@@ -6,7 +6,8 @@ import Button from "./button"
 import { useBreakpoint } from "gatsby-plugin-breakpoints"
 
 import Logo from "../images/logo.svg"
-import Menu from "../assets/menu.png"
+import Menu from "../assets/menu.svg"
+import Close from "../assets/close.svg"
 
 const HeaderWrapper = styled.header`
   ${props =>
@@ -208,11 +209,19 @@ const Header = ({ siteTitle }) => {
                 tabIndex={0}
                 style={{ outline: "none" }}
               >
-                <img
-                  src={Menu}
-                  alt="Menu Button"
-                  style={{ height: "28px", width: "28px", marginLeft: 24 }}
-                />
+                {navOpen ? (
+                  <img
+                    src={Close}
+                    alt="Menu Button"
+                    style={{ height: "28px", width: "28px", marginLeft: 24 }}
+                  />
+                ) : (
+                  <img
+                    src={Menu}
+                    alt="Menu Button"
+                    style={{ height: "28px", width: "28px", marginLeft: 24 }}
+                  />
+                )}
               </div>
             )}
           </Right>
