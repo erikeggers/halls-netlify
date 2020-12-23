@@ -14,10 +14,9 @@ const Schedule = () => (
           hideLandingPageDetails: false,
           primaryColor: "8CBD45",
           textColor: "4d5055",
-          height: "1200px",
         }}
         url="https://calendly.com/royhallstreeservice/service"
-        styles={{ height: "900px" }}
+        styles={{ height: "1200px" }}
       />
     </div>
   </Layout>
