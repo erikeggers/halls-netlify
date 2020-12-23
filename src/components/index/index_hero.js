@@ -8,11 +8,6 @@ import { useBreakpoint } from "gatsby-plugin-breakpoints"
 const Container = styled(BackgroundImage)`
   display: flex;
   align-items: center;
-  width: 100%;
-  height: 600px;
-  max-width: 100%;
-  opacity: 1 !important;
-  background: linear-gradient(270deg, rgba(0, 0, 0, 0) 0%, #101426 100%);
   background-size: cover;
   background-position: 50% 50%;
 `
@@ -23,9 +18,9 @@ const HeroH2 = styled.h2`
   font-weight: bold;
   letter-spacing: 0;
   line-height: ${props =>
-    props.breakpoints.sm ? "24px" : props.breakpoints.md ? "32px" : "48px"};
+    props.breakpoints.sm ? "30px" : props.breakpoints.md ? "42px" : "48px"};
   font-size: ${props =>
-    props.breakpoints.sm ? "22px" : props.breakpoints.md ? "30px" : "46px"};
+    props.breakpoints.sm ? "28px" : props.breakpoints.md ? "40px" : "46px"};
   color: #fff;
   font-family: Montserrat;
 `
@@ -53,11 +48,20 @@ const Hero = () => {
   `)
   const breakpoints = useBreakpoint()
 
+  const imageData = data.indexHero.childImageSharp.fluid
+
+  const backgroundFluidImage = [
+    imageData,
+    `linear-gradient(270deg, rgba(0, 0, 0, 0) 0%, #101426 100%)`,
+  ].reverse()
+
   return (
     <Container
       Tag="section"
       className="hero-image"
-      fluid={data.indexHero.childImageSharp.fluid}
+      fluid={backgroundFluidImage}
+      breakpoints={breakpoints}
+      style={{ height: breakpoints.md ? "425px" : "600px" }}
     >
       <div className="container">
         <div className="row">

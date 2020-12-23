@@ -61,7 +61,6 @@ const Featured = () => {
   `)
 
   const breakpoints = useBreakpoint()
-  console.log(breakpoints)
 
   return (
     <Container className="container">

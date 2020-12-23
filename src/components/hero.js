@@ -11,12 +11,6 @@ const Container = styled(BackgroundImage)`
   width: 100%;
   height: 300px;
   max-width: 100%;
-  /* opacity: 1 !important; */
-  /* background: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0.73),
-    rgba(255, 0, 0, 0)
-  ); */
   background-size: cover;
   background-position: 50% 50%;
   margin-bottom: 56px;
