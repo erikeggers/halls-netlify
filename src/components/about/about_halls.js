@@ -5,10 +5,6 @@ import Img from "gatsby-image"
 
 import { useBreakpoint } from "gatsby-plugin-breakpoints"
 
-const Container = styled.div`
-  /* margin: 0 40px; */
-`
-
 const Row = styled.div`
   display: flex;
   align-items: center;
@@ -52,7 +48,7 @@ const AboutHalls = () => {
   const breakpoints = useBreakpoint()
 
   return (
-    <Container className="container">
+    <div className="container">
       <Row className="row" breakpoint={breakpoints.featured}>
         <ImageContainer className="col-sm-12 col-md-6 col-lg-7">
           <Img
@@ -83,7 +79,7 @@ const AboutHalls = () => {
           </div>
         </TextContainer>
       </Row>
-    </Container>
+    </div>
   )
 }
 

@@ -4,8 +4,8 @@ import Helmet from "react-helmet"
 import { withPrefix } from "gatsby"
 
 const Container = styled.div`
-  height: 200px;
   margin: 30px 0;
+  padding: 32px 0;
   display: flex;
   justify-content: center;
   align-items: center;
