@@ -52,7 +52,6 @@ const Hero = () => {
     }
   `)
   const breakpoints = useBreakpoint()
-  console.log(breakpoints)
 
   return (
     <Container

@@ -1,5 +1,6 @@
 const myCustomQueries = {
   xs: "(max-width: 320px)",
+  featured: "(max-width: 767px)",
   sm: "(max-width: 860px)",
   md: "(max-width: 1224px)",
   l: "(max-width: 1440px)",
