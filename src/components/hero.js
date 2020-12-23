@@ -4,7 +4,6 @@ import BackgroundImage from "gatsby-background-image"
 import { useStaticQuery, graphql } from "gatsby"
 
 const Container = styled(BackgroundImage)`
-  z-index: 1;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -14,6 +13,7 @@ const Container = styled(BackgroundImage)`
   background-size: cover;
   background-position: 50% 50%;
   margin-bottom: 56px;
+  text-align: center;
 `
 
 const HeroH2 = styled.h2`
@@ -85,6 +85,7 @@ const Hero = props => {
       Tag="section"
       className="hero-image"
       fluid={backgroundFluidImage}
+      className="container"
     >
       <HeroH2>{props.text}</HeroH2>
     </Container>

@@ -1,9 +1,10 @@
 import React from "react"
+import { Link } from "gatsby"
 import styled from "styled-components"
 import BackgroundImage from "gatsby-background-image"
 import { useStaticQuery, graphql } from "gatsby"
-import { PopupText } from "react-calendly"
 import { useBreakpoint } from "gatsby-plugin-breakpoints"
+import Button from "../../components/button"
 
 const Container = styled(BackgroundImage)`
   display: flex;
@@ -25,7 +26,7 @@ const HeroH2 = styled.h2`
   font-family: Montserrat;
 `
 const HeroText = styled.p`
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   max-width: 555px;
   color: #fff;
   font-family: "Open Sans";
@@ -33,7 +34,9 @@ const HeroText = styled.p`
   letter-spacing: 0;
   line-height: 24px;
 `
-
+const HeroButton = styled.div`
+  width: 200px;
+`
 const Hero = () => {
   const data = useStaticQuery(graphql`
     query {
@@ -74,28 +77,16 @@ const Hero = () => {
               cleaning up storm disasters, land clearing, dangerous tree
               removals, and much more.
             </HeroText>
-            <PopupText
-              pageSettings={{
-                backgroundColor: "F5F1E0",
-                hideEventTypeDetails: false,
-                hideLandingPageDetails: false,
-                primaryColor: "8CBD45",
-                textColor: "4d5055",
-              }}
-              styles={{
-                backgroundColor: "#8CBD45",
-                borderRadius: "28px",
-                boxShadow: "0 4px 8px 0 rgba(35, 35, 35, 0.14)",
-                padding: "18px 24px",
-                fontFamily: "Montserrat",
-                fontSize: "16px",
-                fontWeight: "bold",
-                letterSpacing: "0",
-                color: "#ffffff",
-              }}
-              text="Schedule Service"
-              url="https://calendly.com/em-eggers/service"
-            />
+            <Link to="/schedule">
+              <HeroButton>
+                <Button
+                  text="Schedule Service"
+                  color="#8CBD45"
+                  padding="18px 24px"
+                  fontLarge={true}
+                />
+              </HeroButton>
+            </Link>
           </div>
         </div>
       </div>
