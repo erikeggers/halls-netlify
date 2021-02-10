@@ -1,7 +1,6 @@
 backend:
-  name: github
+  name: git-gateway
   branch: master
-  repo: erikeggers/halls-netlify
 
 media_folder: src/images
 public_folder: ../images
