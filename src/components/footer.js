@@ -99,7 +99,7 @@ const PhoneContainer = styled.div`
     margin-left: 8px;
   }
 `
-const IconContainer = styled.div`
+const IconContainer = styled.a`
   display: flex;
   margin-top: ${props => (props.breakpoint ? "8px" : null)};
   justify-content: ${props => (!props.breakpoint ? "flex-end" : null)};
@@ -178,7 +178,11 @@ const Footer = () => {
               <Link to="/testimonials" className="link-text">
                 Testimonials
               </Link>
-              <IconContainer breakpoint={breakpoints.featured}>
+              <IconContainer
+                href="https://www.facebook.com/hallstreeservice/"
+                target="_blank"
+                breakpoint={breakpoints.featured}
+              >
                 <FacebookIcon fluid={data.facebook.childImageSharp.fluid} />
               </IconContainer>
             </LinkContainer>
