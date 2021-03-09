@@ -107,12 +107,25 @@ const IconContainer = styled.a`
   border-left: ${props => (!props.breakpoint ? "1px solid #e3dccf" : null)};
 `
 
+const IconContainerBorderless = styled.a`
+  display: flex;
+  margin-top: ${props => (props.breakpoint ? "16px" : null)};
+  justify-content: ${props => (!props.breakpoint ? "flex-end" : null)};
+  width: 38px;
+`
+
 const PhoneIcon = styled(BackgroundImage)`
   width: 24px;
   height: 24px;
 `
 
 const FacebookIcon = styled(BackgroundImage)`
+  width: 24px;
+  height: 24px;
+  margin-left: 8px;
+`
+
+const InstagramIcon = styled(BackgroundImage)`
   width: 24px;
   height: 24px;
   margin-left: 8px;
@@ -185,6 +198,13 @@ const Footer = () => {
               >
                 <FacebookIcon fluid={data.facebook.childImageSharp.fluid} />
               </IconContainer>
+              <IconContainerBorderless
+                href="https://www.instagram.com/hallstreeservicemacon/"
+                target="_blank"
+                breakpoint={breakpoints.featured}
+              >
+                <InstagramIcon fluid={data.instagram.childImageSharp.fluid} />
+              </IconContainerBorderless>
             </LinkContainer>
           </div>
         </div>

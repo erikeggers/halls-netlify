@@ -80,13 +80,7 @@ const Hero = props => {
     )`,
   ].reverse()
   return (
-    <Container
-      isDarken={"30%"}
-      Tag="section"
-      className="hero-image"
-      fluid={backgroundFluidImage}
-      className="container"
-    >
+    <Container isDarken={"30%"} Tag="section" fluid={backgroundFluidImage}>
       <HeroH2>{props.text}</HeroH2>
     </Container>
   )
